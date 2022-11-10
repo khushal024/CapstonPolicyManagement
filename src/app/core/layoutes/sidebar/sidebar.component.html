@@ -2,12 +2,16 @@
   <div class="sidebar-options">
     <header>
       <a routerLink="/">
-        <img
-          src="/assets/images/sidebarlogo.png"
-          alt="Managed Receiving logo"
-        />
+        <img src="/assets/images/sidebarlogo.png" alt="Managed Receiving logo" />
       </a>
     </header>
+    <mat-action-list>
+      <button mat-list-item (click)="index = 0"> <span class="material-icons"> tune </span> </button>
+      <button mat-list-item (click)="index = 1"> <span class="material-icons"> tune </span> </button>
+      <button mat-list-item (click)="index = 2"> <span class="material-icons"> tune </span> </button>
+      <button mat-list-item (click)="index = 3"> <span class="material-icons"> tune </span> </button>
+      <button mat-list-item (click)="index = 4"> <span class="material-icons"> tune </span> </button>
+    </mat-action-list>
     <ul>
       <li>
         <button type="button" (click)="showFiller = !showFiller">
@@ -28,34 +32,52 @@
     </div>
 
 
- 
-    <button type="button" class="sidebar-logout" (click)="changeMenu(drawer)">
+
+    <button type="button" class="sidebar-logout">
       <span class="material-icons"> logout </span>
     </button>
   </div>
 
   <mat-drawer-container class="sidebar-content" autosize>
     <mat-drawer #drawer class="sidebar-results" mode="side">
-      <p>Auto-resizing sidenav</p>
-      <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
-      <button (click)="showFiller = !showFiller" mat-raised-button>
-        Toggle extra text
-      </button>
+      <mat-tab-group [(selectedIndex)]="index" class="header-less-tabs" animationDuration="0ms">
+        <mat-tab>
+          <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
+          <button (click)="showFiller = !showFiller" mat-raised-button>
+            Toggle extra text
+          </button>
+        </mat-tab>
+        <mat-tab> Content 2 </mat-tab>
+        <mat-tab> Content 3 </mat-tab>
+        <mat-tab> Content 4 </mat-tab>
+        <mat-tab> Content 5 </mat-tab>
+
+      </mat-tab-group>
+
     </mat-drawer>
   </mat-drawer-container>
- 
-  <!-- <div *ngIf="selectedMenu !== AppMenu.None"> -->
-  <div [ngSwitch]="switch_expression">
-    <div *ngSwitchCase="'match_expression_1'">.dasda..</div>
-    <div #match_expression_2 *ngSwitchCase="'match_expression_2'">
-      .dasdadasdasd..
-    </div>
-    <div #match_expression_3 *ngSwitchCase="'match_expression_3'">
-      ..dasdasdasdadsaddad.
-    </div>
-    <ng-container *ngSwitchCase="'match_expression_4'">
-      use a ng-container to group multiple root nodes fsfsdfs
-    </ng-container>
-    <div *ngSwitchDefault>...</div>
-  </div>
-</div>
+
+
+  <!-- 
+
+  <mat-sidenav-container class="side-nav-container">
+    <mat-sidenav mode="side" opened class="sidenav">
+      <mat-action-list>
+        <button mat-list-item (click)="index = 0"> tab 1 </button>
+        <button mat-list-item (click)="index = 1"> tab 2 </button>
+        <button mat-list-item (click)="index = 2"> tab 3 </button>
+        <button mat-list-item (click)="index = 3"> tab 4 </button>
+        <button mat-list-item (click)="index = 4"> tab 5 </button>
+      </mat-action-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <mat-tab-group [(selectedIndex)]="index" class="header-less-tabs" animationDuration="0ms">
+        <mat-tab> Content 1 </mat-tab>
+        <mat-tab> Content 2 </mat-tab>
+        <mat-tab> Content 1 </mat-tab>
+        <mat-tab> Content 2 </mat-tab>
+        <mat-tab> Content 1 </mat-tab>
+
+      </mat-tab-group>
+    </mat-sidenav-content>
+  </mat-sidenav-container> -->

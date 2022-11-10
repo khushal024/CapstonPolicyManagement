@@ -1,27 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'pm-sidebar',
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class SidebarComponent implements OnInit {
-  switch_expression = 'match_expression_2';
-  showFiller = true;
-  arrow_back_ios: String = ''; 
 
+  showFiller = true;
+  arrow_back_ios: String = '';
+  index: number = 1;
   toggleSLider(drawer: any) {
     drawer.toggle();
     this.arrow_back_ios = "arrow_back_ios"
   }
-  showDrawer() {}
-  constructor() {}
-  visibility = 'hidden';
-  changeMenu(menu: any): void {
-    this.switch_expression = menu;
-    console.log(menu);
-    this.showFiller = !menu;
-  }
 
-  ngOnInit(): void {}
+  constructor() { }
+
+  ngOnInit(): void { }
 }

@@ -4,21 +4,23 @@ import { SidebarComponent } from './layoutes/sidebar/sidebar.component';
 import { MaterialModule } from '../material/material.module';
 import { SearchComponent } from './shared/search/search.component';
 import { SidebarOptionsComponent } from './sidebar-options/sidebar-options.component';
-import { SidebarContentComponent } from './sidebar-options/sidebar-content/sidebar-content.component'; 
+import { SidebarContentComponent } from './sidebar-options/sidebar-content/sidebar-content.component';
+import { NavbarComponent } from './layoutes/sidebar/navbar/navbar.component';
 
 
-@NgModule({ 
+@NgModule({
   declarations: [
     SidebarComponent,
     SearchComponent,
     SidebarOptionsComponent,
-    SidebarContentComponent
+    SidebarContentComponent,
+    NavbarComponent
   ],
   imports: [
     CommonModule,
     MaterialModule
   ],
-  exports :[
+  exports: [
     SidebarComponent,
     SidebarContentComponent,
     SidebarOptionsComponent
