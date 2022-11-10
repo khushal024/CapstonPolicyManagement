@@ -1,0 +1,64 @@
+<header>
+    <a routerLink="/">
+      <img src="/assets/images/logo-mr.svg" alt="Managed Receiving logo" />
+    </a>
+  </header>
+  
+  <nav>
+    <ul>
+      <li>
+        <button
+          label="Global Search"
+          [class.is-selected]="selectedMenu === AppMenu.Search"
+          (click)="changeMenu(AppMenu.Search)"
+        >
+          <div name="spyglass">hloooo</div>
+        </button>
+      </li>
+      <li>
+        <button
+          label="View Site"
+          [class.is-selected]="selectedMenu === AppMenu.Site"
+          (click)="changeMenu(AppMenu.Site)"
+        >
+          <div name="pin-outlined">changeMenu(AppMenu.Site)</div>
+        </button>
+      </li>
+      <li >
+        <button
+          label="Global Links"
+          [class.is-selected]="selectedMenu === AppMenu.Global"
+          (click)="changeMenu(AppMenu.Global)"
+        >
+          <div name="world">(AppMenu.Global)</div>
+        </button>
+      </li>
+      <li>
+        <button
+          label="Help Assist"
+          [class.is-selected]="selectedMenu === AppMenu.GlobalHelpAssist"
+          (click)="changeMenu(AppMenu.GlobalHelpAssist)"
+        >
+          ghghgh
+        </button>
+      </li>
+      <li class="toggle">
+        <button
+         
+          (click)="changeMenu(isMenuVisible ? AppMenu.None : previousMenu)"
+        >
+          <div name="chevron" [class.open]="isMenuVisible">hloooo</div>
+        </button>
+      </li>
+      <li id="mr-beamer">
+        <button label="Open Beamer notifications">
+          <img
+            src="https://app.getbeamer.com/images/bullhorn.svg"
+            alt="Beamer Notification Image"
+          />
+        </button>
+      </li>
+
+    </ul>
+  </nav>
+  

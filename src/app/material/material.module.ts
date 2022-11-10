@@ -10,7 +10,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import {MatSidenavModule} from '@angular/material/sidenav';
-
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
 @NgModule({
   declarations: [],
   imports: [
@@ -24,7 +24,8 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     MatFormFieldModule,
     MatCheckboxModule,
     MatIconModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatButtonToggleModule
   ],
   exports: [
     CommonModule,
@@ -37,7 +38,8 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     MatFormFieldModule,
     MatCheckboxModule,
     MatIconModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatButtonToggleModule
   ],
 })
 export class MaterialModule {}
