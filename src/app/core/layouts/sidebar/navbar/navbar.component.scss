@@ -1,0 +1,17 @@
+.sidebarNav-list {
+  .mat-list {
+    margin: 35px 0px;
+    .mat-list-item {
+      margin-bottom: 20px;
+      height: 70px;
+      border-radius: 20px;
+      background: #e4e6e8;
+      .material-icons {
+        font-size: 40px;
+      }
+      &:hover {
+        background-color: #e4e6e8;
+      }
+    }
+  }
+}

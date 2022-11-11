@@ -1,0 +1,27 @@
+.viewuser-section {
+  > *{
+    font-family: "DejaVu Sans";
+  }
+  h2 { 
+    font-size: 24px;
+    text-align: center;
+    padding: 45px;
+    text-transform: uppercase;
+  }
+  .mat-radio-button {
+    width: 100%;
+  }
+}
+.search-section {
+  padding: 0.875rem 0.75rem;
+
+  .search {
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    mat-icon {
+      font-size: 36px;
+    }
+  }
+}

@@ -1,27 +1,26 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SidebarComponent } from './layoutes/sidebar/sidebar.component';
+import { SidebarComponent } from './layouts/sidebar/sidebar.component';
 import { MaterialModule } from '../material/material.module';
 import { SearchComponent } from './shared/search/search.component';
-import { SidebarOptionsComponent } from './sidebar-options/sidebar-options.component';
-import { SidebarContentComponent } from './sidebar-options/sidebar-content/sidebar-content.component'; 
+import { NavbarComponent } from './layouts/sidebar/navbar/navbar.component';
+import { ViewUserComponent } from './layouts/sidebar/view-user/view-user.component';
 
 
-@NgModule({ 
+
+@NgModule({
   declarations: [
     SidebarComponent,
     SearchComponent,
-    SidebarOptionsComponent,
-    SidebarContentComponent
+    NavbarComponent,
+    ViewUserComponent,
   ],
   imports: [
     CommonModule,
     MaterialModule
   ],
-  exports :[
+  exports: [
     SidebarComponent,
-    SidebarContentComponent,
-    SidebarOptionsComponent
   ]
 })
 export class CoreModule { }

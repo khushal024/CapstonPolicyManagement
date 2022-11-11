@@ -1,0 +1,30 @@
+<div class="viewuser-section">
+  <h2 class="heading-title">View users by</h2>
+  <div class="viewusermain">  
+  <mat-radio-group #searchby>
+    <ng-container *ngFor="let item of searchOptions">
+      <mat-radio-button
+        value="{{ item.value }}"
+        (change)="selectedRadio($event)"
+        checked="{{ item.alreadyChecked }}"
+      >
+        {{ item.value }}</mat-radio-button
+      >
+    </ng-container>
+  </mat-radio-group>
+
+  <p>Search by {{ searchbyselected.value }}</p>
+  <div class="search-section">
+    <div class="search">
+      <mat-icon>search</mat-icon>
+      <input
+        type="text"
+        matInput
+        placeholder="Search"
+        (keydown.enter)="searchAlert()"
+      />
+    </div>
+    <button (click)="searchAlert()">Search</button>
+  </div>
+</div>
+</div> 
