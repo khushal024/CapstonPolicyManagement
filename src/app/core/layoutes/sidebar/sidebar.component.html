@@ -16,12 +16,12 @@
       </li>
     </ul>
 
-    <div class="sidebar-toggle" (click)="toggleSLider(drawer)">
+    <div class="sidebar-toggle" (click)="toggleDrawer(drawer)">
       <mat-button-toggle-group #toggleBtn="matButtonToggleGroup">
-        <mat-button-toggle #showsidebar value="showsidebar">
+        <mat-button-toggle value="showsidebar">
           <span class="material-icons"> arrow_forward_ios </span>
         </mat-button-toggle>
-        <mat-button-toggle #hidesidebar value="hidesidebar">
+        <mat-button-toggle value="hidesidebar"> 
           <span class="material-icons"> {{arrow_back_ios}} </span>
         </mat-button-toggle>
       </mat-button-toggle-group>

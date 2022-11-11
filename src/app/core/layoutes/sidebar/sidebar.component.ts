@@ -10,7 +10,7 @@ export class SidebarComponent implements OnInit {
   showFiller = true;
   arrow_back_ios: String = ''; 
 
-  toggleSLider(drawer: any) {
+  toggleDrawer(drawer: any) {
     drawer.toggle();
     this.arrow_back_ios = "arrow_back_ios"
   }
