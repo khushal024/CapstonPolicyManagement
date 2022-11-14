@@ -17,34 +17,49 @@
         margin-bottom: 20px;
         height: 70px;
         border-radius: 20px;
-        background: #e4e6e8;
+        background-color: #e4e6e8;
+        &:hover , &:focus {
+          background-color: #e4e6e8;    
+        }
+
         .material-icons {
           font-size: 40px;
         }
-        &:hover {
-          background-color: #e4e6e8;
-        }
+      
       }
     }
   }
   .sidebar-toggle {
-    button{
+    width: 100%;
+    text-align: center;
+    padding: 12px 12px;
+    border-radius: 15px;
+    background-color: #fff;
+
+    &:hover {
+      background-color: #e4e6e8;
+    }
+    button {
       border: none;
-      background: #fff;
       cursor: pointer;
+      background-color: transparent;
     }
     span {
       font-size: 36px;
-      color: #999999; 
+      color: #999999;
     }
   }
   .sidebar-logout {
     margin-top: auto;
     border: none;
     background: none;
-    span {
-      font-size: 36px;
-      color: #999999;
+    width: 100%;
+    padding: 15px 0;
+    border-radius: 13px;
+
+    &:hover {
+      background-color: #e4e6e8;
+      cursor: pointer;
     }
   }
 }
