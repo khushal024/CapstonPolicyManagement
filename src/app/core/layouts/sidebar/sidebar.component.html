@@ -1,71 +1,33 @@
 <div class="main-sidebar">
-  <div class="sidebar-options">
-    <header>
-      <a routerLink="/">
-        <img
-          src="/assets/images/sidebarlogo.png"
-          alt="Managed Receiving logo"
-        />
-      </a>
-    </header>
+  <pm-navbar
+    (getIndex)="menuIndex($event)"
+    [sideDrawer]="sideDrawer"
+  ></pm-navbar>
 
-    <pm-navbar (getIndex)="menuIndex($event)"></pm-navbar>
-
-    <div class="sidebar-toggle" (click)="toggleSLider(drawer)">
-      <mat-button-toggle-group #toggleBtn="matButtonToggleGroup">
-        <mat-button-toggle value="showsidebar">
-          <span class="material-icons"> arrow_forward_ios </span>
-        </mat-button-toggle>
-        <mat-button-toggle value="hidesidebar">
-          <span class="material-icons"> {{ arrow_back_ios }} </span>
-        </mat-button-toggle>
-      </mat-button-toggle-group>
-    </div>
-
-    <button type="button" class="sidebar-logout">
-      <span class="material-icons"> logout </span>
-    </button>
-  </div>
-
-  <mat-drawer-container class="sidebar-content" autosize>
-    <mat-drawer #drawer class="sidebar-results" mode="side">
-      <mat-tab-group
-        [(selectedIndex)]="index"
-        class="header-less-tabs"
-        animationDuration="100ms"
+  <div class="sidebar-content">
+    <mat-drawer-container autosize>
+      <mat-drawer
+        #sideDrawer
+        class="sidebar-results"
+        mode="side"
+        [opened]="false"
       >
-        <mat-tab>
-          <pm-view-user></pm-view-user>
-        </mat-tab>
-        <mat-tab> Content 2 </mat-tab>
-        <mat-tab> Content 3 </mat-tab>
-        <mat-tab> Content 4 </mat-tab>
-        <mat-tab> Content 5 </mat-tab>
-      </mat-tab-group>
-    </mat-drawer>
-  </mat-drawer-container>
-
-  <!-- 
-
-  <mat-sidenav-container class="side-nav-container">
-    <mat-sidenav mode="side" opened class="sidenav">
-      <mat-action-list>
-        <button mat-list-item (click)="index = 0"> tab 1 </button>
-        <button mat-list-item (click)="index = 1"> tab 2 </button>
-        <button mat-list-item (click)="index = 2"> tab 3 </button>
-        <button mat-list-item (click)="index = 3"> tab 4 </button>
-        <button mat-list-item (click)="index = 4"> tab 5 </button>
-      </mat-action-list>
-    </mat-sidenav>
-    <mat-sidenav-content>
-      <mat-tab-group [(selectedIndex)]="index" class="header-less-tabs" animationDuration="0ms">
-        <mat-tab> Content 1 </mat-tab>
-        <mat-tab> Content 2 </mat-tab>
-        <mat-tab> Content 1 </mat-tab>
-        <mat-tab> Content 2 </mat-tab>
-        <mat-tab> Content 1 </mat-tab>
-
-      </mat-tab-group>
-    </mat-sidenav-content>
-  </mat-sidenav-container> -->
+        <mat-tab-group
+          [(selectedIndex)]="index"
+          class="header-less-tabs"
+          animationDuration="100ms"
+        >
+          <mat-tab>
+            <pm-view-user></pm-view-user>
+          </mat-tab>
+          <mat-tab> Content 2 </mat-tab>
+          <mat-tab> Content 3 </mat-tab>
+        </mat-tab-group>
+      </mat-drawer>
+    </mat-drawer-container>
+    <div class="sidebar-footer" *ngIf="sideDrawer.opened">
+      <img src="assets/images/capstonefooter.png" />
+      <p>Managed Receiving 2.60.0</p>
+    </div>
+  </div>
 </div>

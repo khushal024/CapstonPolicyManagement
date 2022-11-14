@@ -1,8 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
-@font-face{
-    font-family:'DejaVu Sans';
-    src:url(assets/fonts/dejavu-sans-webfont.woff) format('woff2'),
-    url(assets/fonts/dejavu-sans-webfont.woff2) format('woff'),
-   }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@font-face {
+  font-family: "DejaVu Sans";
+  src: url(assets/fonts/dejavu-sans-webfont.woff) format("woff2"),
+    url(assets/fonts/dejavu-sans-webfont.woff2) format("woff");
+}
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "DejaVu Sans";
+//   font-family: Roboto, "Helvetica Neue", sans-serif;
+  box-sizing: border-box;
+}
+*{
+  box-sizing: border-box;  
+} 

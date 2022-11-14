@@ -1,14 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'pm-view-user',
   templateUrl: './view-user.component.html',
   styleUrls: ['./view-user.component.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class ViewUserComponent implements OnInit {
-  searchbyselected: any = 'Name or Email';
+  searchbyselected: string = 'Name or Email';
 
-  searchOptions: { value: String; alreadyChecked: Boolean }[] = [
+  searchOptions: { value: string; alreadyChecked: Boolean }[] = [
     {
       value: 'Name or email',
       alreadyChecked: true,
@@ -25,8 +26,11 @@ export class ViewUserComponent implements OnInit {
   searchAlert() {
     alert('Comming Soon...');
   }
-  selectedRadio(val: any) {
-    this.searchbyselected = val;
+  selectedRadio(val: {value : string}) {
+    const changedSearchBy = val;
+
+    this.searchbyselected = changedSearchBy.value ;
+
     console.log(this.searchbyselected);
   }
   constructor() {}

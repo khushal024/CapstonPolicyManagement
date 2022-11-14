@@ -13,10 +13,11 @@
     </ng-container>
   </mat-radio-group>
 
-  <p>Search by {{ searchbyselected.value }}</p>
+  
   <div class="search-section">
+    <p>Search by {{ searchbyselected }}</p>
     <div class="search">
-      <mat-icon>search</mat-icon>
+      <mat-icon (click)="searchAlert()">search</mat-icon>
       <input
         type="text"
         matInput

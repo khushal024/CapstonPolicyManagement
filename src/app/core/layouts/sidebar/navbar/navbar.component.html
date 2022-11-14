@@ -1,3 +1,9 @@
+<div class="sidebar-options">
+<header>
+  <a routerLink="/">
+    <img src="/assets/images/sidebarlogo.png" alt="Managed Receiving logo" />
+  </a>
+</header>
 <div class="sidebarNav-list">
   <mat-action-list>
     <button mat-list-item (click)="changeMenuTo(0)">
@@ -10,4 +16,17 @@
       <span class="material-icons"> account_tree </span>
     </button>
   </mat-action-list>
+</div>
+<div class="sidebar-toggle" (click)="toggleSidebar()"> 
+  <button *ngIf="!sideDrawer.opened">
+      <span class="material-icons"> arrow_forward_ios </span>
+    </button>
+    <button  *ngIf="sideDrawer.opened">
+      <span class="material-icons"> arrow_back_ios </span>
+    </button>
+</div>
+ 
+<button type="button" class="sidebar-logout" (click)="logout()">
+  <span class="material-icons"> logout </span>
+</button>  
 </div>

@@ -1,4 +1,12 @@
-import { Component, OnInit, Output, EventEmitter ,ViewEncapsulation} from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Output,
+  EventEmitter,
+  ViewEncapsulation,
+  Input,
+} from '@angular/core';
+import { MatDrawer } from '@angular/material/sidenav';
 
 @Component({
   selector: 'pm-navbar',
@@ -8,12 +16,19 @@ import { Component, OnInit, Output, EventEmitter ,ViewEncapsulation} from '@angu
 })
 export class NavbarComponent implements OnInit {
   @Output() getIndex: EventEmitter<number> = new EventEmitter();
-
+  @Input() sideDrawer!: MatDrawer;
   constructor() {}
-
+  toggleSidebar() { 
+    this.sideDrawer.toggle();
+  }
   changeMenuTo(menuNo: number) {
     this.getIndex.emit(menuNo);
+    if (!this.sideDrawer.opened) {
+      this.sideDrawer.toggle();
+    }
   }
-
+  logout() {
+    window.location.reload();
+  } 
   ngOnInit(): void {}
 }
